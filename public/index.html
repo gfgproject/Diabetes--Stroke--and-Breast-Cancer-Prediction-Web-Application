@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Health Prediction System</title>
+</head>
+<body>
+    <header>
+        <h1 id="typing-effect"></h1> <!-- Typing effect for the header -->
+        <nav>
+            <div class="hamburger" onclick="toggleMenu()">☰</div>
+            <ul id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2 id="main-typing-effect"></h2> <!-- Typing effect for the main section -->
+            <p>This web application helps in predicting the risks of diabetes and breast cancer. Please login to access the prediction features.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Health Prediction System</p>
+    </footer>
+    <script type="module" src="scripts.js"></script>
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('show');
+        }
+
+        // Typing effect for header
+        const headerText = "Welcome to Health Prediction System";
+        let headerIndex = 0;
+
+        function typeHeaderText() {
+            if (headerIndex < headerText.length) {
+                document.getElementById("typing-effect").innerHTML += headerText.charAt(headerIndex);
+                headerIndex++;
+                setTimeout(typeHeaderText, 100); // Adjust speed here
+            }
+        }
+
+        typeHeaderText(); // Start the typing effect for the header
+
+        // Typing effect for main section
+        const mainText = "Predict Your Health Risks Today!";
+        let mainIndex = 0;
+
+        function typeMainText() {
+            if (mainIndex < mainText.length) {
+                document.getElementById("main-typing-effect").innerHTML += mainText.charAt(mainIndex);
+                mainIndex++;
+                setTimeout(typeMainText, 150); // Adjust speed here
+            }
+        }
+
+        typeMainText(); // Start the typing effect for the main section
+    </script>
+</body>
+</html>
